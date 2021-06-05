@@ -24,7 +24,7 @@ function processCommand(receivedMessage) {
    } else if (fullCommand == "help") {
       helpCommand(receivedMessage);
    } else if (joined == true) {
-      playCodes(fullCommand);
+      playCodes(fullCommand,receivedMessage);
    } else {
       receivedMessage.reply("Try `-help` or `-join`");
    }
@@ -42,7 +42,7 @@ async function joinCommand(message) {
    }
 }
 
-function playCodes(command) {
+function playCodes(command,message) {
    switch (command) {
       case "BI":
          connection.play("./assets/bringit.wav");
@@ -84,7 +84,7 @@ function playCodes(command) {
          connection.play("./assets/moveout.wav");
          break;
       default:
-         receivedMessage.reply("No such command : `" + command + "`");
+         Message.reply("No such command : `-" + command + " `");
          break;
    }
 }
