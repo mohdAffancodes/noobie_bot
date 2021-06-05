@@ -36,6 +36,7 @@ async function joinCommand(message) {
    if (message.member.voice.channel) {
       connection = await message.member.voice.channel.join();
       joined = true;
+      message.reply("Joined " + message.member.voice.channel)
    } else {
       message.reply("You need to join a voice channel first!");
    }
