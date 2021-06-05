@@ -3,7 +3,14 @@ const client = new Discord.Client();
 let joined = false;
 let connection;
 
-client.on("ready", () => {});
+client.on("ready", () => {
+   client.guilds.cache.forEach((guild) => {
+        // List all channels
+        guild.channels.cache.forEach((channel) => {
+            channel.send("Hello World");
+        })
+    })
+});
 
 client.on("message", (receivedMessage) => {
    // Prevent bot from responding to its own messages
