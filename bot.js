@@ -91,7 +91,7 @@ function playCodes(command,message) {
          connection.play("./assets/moveout.wav");
          break;
       default:
-         message.reply("No such command : `-" + command + " `");
+         message.reply("Try `-help` for a list of commands");
          break;
    }
 }
