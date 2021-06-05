@@ -36,7 +36,7 @@ async function joinCommand(message) {
    if (message.member.voice.channel) {
       connection = await message.member.voice.channel.join();
       joined = true;
-      message.reply("Joined " + message.member.voice.channel)
+      message.reply("Joined " + message.member.voice.channel.name)
    } else {
       message.reply("You need to join a voice channel first!");
    }
@@ -84,7 +84,7 @@ function playCodes(command) {
          connection.play("./assets/moveout.wav");
          break;
       default:
-         receivedMessage.reply("No such command : `" + fullCommand + "`");
+         receivedMessage.reply("No such command : `" + command + "`");
          break;
    }
 }
