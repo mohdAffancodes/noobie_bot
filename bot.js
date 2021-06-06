@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-let joined = false;
 let connection;
 
 client.on("ready", () => {
@@ -30,7 +29,7 @@ function processCommand(receivedMessage) {
       joinCommand(receivedMessage);
    } else if (fullCommand == "help") {
       helpCommand(receivedMessage);
-   } else if (joined == true) {
+   } else if ((message.member.voice.channel)) {
       playCodes(fullCommand,receivedMessage);
    } else {
       receivedMessage.reply("Try `-help` or `-join`");
@@ -42,7 +41,6 @@ async function joinCommand(message) {
    // Only try to join the sender's voice channel if they are in one themselves
    if (message.member.voice.channel) {
       connection = await message.member.voice.channel.join();
-      joined = true;
       message.reply("👍Joined `" + message.member.voice.channel.name + "`")
    } else {
       message.reply("You need to join a voice channel first!");
