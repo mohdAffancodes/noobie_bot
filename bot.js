@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-let connection;
+var joined = false;
+var connection;
 
 client.on("ready", () => {
    client.guilds.cache.forEach((guild) => {
@@ -29,10 +30,10 @@ function processCommand(receivedMessage) {
       joinCommand(receivedMessage);
    } else if (fullCommand == "help") {
       helpCommand(receivedMessage);
-   } else if ((message.member.voice.channel)) {
+   } else if (receivedMessage.member.voice.channel && joined == true) {
       playCodes(fullCommand,receivedMessage);
    } else {
-      receivedMessage.reply("Try `-help` or `-join`");
+      receivedMessage.channel.send("Try `-help` or `-join`");
    }
 }
 
@@ -41,7 +42,8 @@ async function joinCommand(message) {
    // Only try to join the sender's voice channel if they are in one themselves
    if (message.member.voice.channel) {
       connection = await message.member.voice.channel.join();
-      message.reply("👍Joined `" + message.member.voice.channel.name + "`")
+      message.channel.send("Joined `" + message.member.voice.channel.name + "`")
+      joined = true;
    } else {
       message.reply("You need to join a voice channel first!");
    }
@@ -89,13 +91,13 @@ function playCodes(command,message) {
          connection.play("./assets/moveout.wav");
          break;
       default:
-         message.reply("Try `-help` for a list of commands");
+         message.channel.send("Try `-help` for a list of commands");
          break;
    }
 }
 
 function helpCommand(message) {
-   message.reply(
+   message.channel.send(
       "\nList of commands -\n`-join ` - To make the bot join the voice\n`-LG ` – lets go,yeah\n`-BI ` – bring it\n`-GS ` – get some\n`-RU ` – ready up\n`-NN ` – Noooooooooooo\n`-CB ` – Come on boy\n`-NS ` – Nice shot\n`-GG ` – Good Game\n`-HH ` – A perfect fighting machine\n`-CM ` – Cover me\n`-MO ` – Move out\n`-WP ` – You wanna piece of me!\n`-GM ` – Oh, They got me!"
    );
 }
