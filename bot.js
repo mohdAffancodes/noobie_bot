@@ -98,7 +98,7 @@ function playCodes(command,message) {
 
 function helpCommand(message) {
    message.channel.send(
-      "\nList of commands -\n`-join ` - To make the bot join the voice\n`-LG ` – lets go,yeah\n`-BI ` – bring it\n`-GS ` – get some\n`-RU ` – ready up\n`-NN ` – Noooooooooooo\n`-CB ` – Come on boy\n`-NS ` – Nice shot\n`-GG ` – Good Game\n`-HH ` – A perfect fighting machine\n`-CM ` – Cover me\n`-MO ` – Move out\n`-WP ` – You wanna piece of me!\n`-GM ` – Oh, They got me!"
+      "\nList of commands -\n`-join ` - To make the bot join the voice channel\n`-LG ` – lets go,yeah\n`-BI ` – bring it\n`-GS ` – get some\n`-RU ` – ready up\n`-NN ` – Noooooooooooo\n`-CB ` – Come on boy\n`-NS ` – Nice shot\n`-GG ` – Good Game\n`-HH ` – A perfect fighting machine\n`-CM ` – Cover me\n`-MO ` – Move out\n`-WP ` – You wanna piece of me!\n`-GM ` – Oh, They got me!"
    );
 }
 
