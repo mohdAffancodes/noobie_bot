@@ -24,7 +24,7 @@ client.on("message", (receivedMessage) => {
 });
 
 function processCommand(receivedMessage) {
-   let fullCommand = receivedMessage.content.substr(1); // Remove the leading exclamation mark
+   let fullCommand = receivedMessage.content.substr(1).toLowerCase(); // Remove the leading exclamation mark
 
    if (fullCommand == "join") {
       joinCommand(receivedMessage);
