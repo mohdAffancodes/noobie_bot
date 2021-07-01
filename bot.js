@@ -51,43 +51,43 @@ async function joinCommand(message) {
 
 function playCodes(command,message) {
    switch (command) {
-      case "BI":
+      case "bi":
          connection.play("./assets/bringit.wav");
          break;
-      case "GG":
+      case "gg":
          connection.play("./assets/goodgame.wav");
          break;
-      case "WP":
+      case "wp":
          connection.play("./assets/piece.wav");
          break;
-      case "NS":
+      case "ns":
          connection.play("./assets/niceshot.wav");
          break;
-      case "HH":
+      case "hh":
          connection.play("./assets/hoorah.wav");
          break;
-      case "GM":
+      case "gm":
          connection.play("./assets/gotme.wav");
          break;
-      case "CB":
+      case "cb":
          connection.play("./assets/cmonboy.wav");
          break;
-      case "CM":
+      case "cm":
          connection.play("./assets/coverme.wav");
          break;
-      case "NN":
+      case "nn":
          connection.play("./assets/no.wav");
          break;
-      case "RU":
+      case "ru":
          connection.play("./assets/readyup.wav");
          break;
-      case "GS":
+      case "gs":
          connection.play("./assets/getsome.wav");
          break;
-      case "LG":
+      case "lg":
          connection.play("./assets/yeah.wav");
          break;
-      case "MO":
+      case "mo":
          connection.play("./assets/moveout.wav");
          break;
       default:
