@@ -24,7 +24,7 @@ client.on("message", (receivedMessage) => {
 });
 
 function processCommand(receivedMessage) {
-   let fullCommand = receivedMessage.content.substr(1).toLowerCase(); // Remove the leading exclamation mark
+   let fullCommand = receivedMessage.content.substr(1); // Remove the leading exclamation mark
 
    if (fullCommand == "join") {
       joinCommand(receivedMessage);
@@ -51,43 +51,43 @@ async function joinCommand(message) {
 
 function playCodes(command,message) {
    switch (command) {
-      case "bi":
+      case "BI":
          connection.play("./assets/bringit.wav");
          break;
-      case "gg":
+      case "GG":
          connection.play("./assets/goodgame.wav");
          break;
-      case "wp":
+      case "WP":
          connection.play("./assets/piece.wav");
          break;
-      case "ns":
+      case "NS":
          connection.play("./assets/niceshot.wav");
          break;
-      case "hh":
+      case "HH":
          connection.play("./assets/hoorah.wav");
          break;
-      case "gm":
+      case "GM":
          connection.play("./assets/gotme.wav");
          break;
-      case "cb":
+      case "CB":
          connection.play("./assets/cmonboy.wav");
          break;
-      case "cm":
+      case "CM":
          connection.play("./assets/coverme.wav");
          break;
-      case "nn":
+      case "NN":
          connection.play("./assets/no.wav");
          break;
-      case "ru":
+      case "RU":
          connection.play("./assets/readyup.wav");
          break;
-      case "gs":
+      case "GS":
          connection.play("./assets/getsome.wav");
          break;
-      case "lg":
+      case "LG":
          connection.play("./assets/yeah.wav");
          break;
-      case "mo":
+      case "MO":
          connection.play("./assets/moveout.wav");
          break;
       default:
