@@ -102,4 +102,4 @@ function helpCommand(message) {
    );
 }
 
-client.login("ODUwMzMwMTgxNDQ0MDQyODEz.YLoJsQ.9Dkq66T0_5D0nz7IqCfn1k0kKwk");
+client.login(process.env.TOKEN);
