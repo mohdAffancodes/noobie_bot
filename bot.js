@@ -42,7 +42,7 @@ async function joinCommand(message) {
    // Only try to join the sender's voice channel if they are in one themselves
    if (message.member.voice.channel) {
       connection = await message.member.voice.channel.join();
-      message.channel.send("Joined `" + message.member.voice.channel.name + "`")
+      message.channel.send("Joined #" + message.member.voice.channel.name)
       joined = true;
    } else {
       message.reply("You need to join a voice channel first!");
